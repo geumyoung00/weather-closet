@@ -1,0 +1,23 @@
+.btn {
+  width: fit-content;
+  font-size: 1.6rem;
+}
+.btn button {
+  background: #e95332;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+}
+.btn.gray button {
+  background: gray;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+}
+.btn.clear button {
+  background: clear;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+}
+.btn.clear button {
+  background: transparent;
+  padding: 1rem;
+}

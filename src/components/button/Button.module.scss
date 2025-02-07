@@ -1,0 +1,18 @@
+@use '../../scss/mixin' as mixin;
+
+.btn {
+    & {
+        width: fit-content;
+        font-size: 1.6rem;
+        @include mixin.button();
+    }
+
+    &.gray {
+        @include mixin.button(gray);
+    }
+
+    &.clear {
+        @include mixin.button(clear);
+    }
+
+}

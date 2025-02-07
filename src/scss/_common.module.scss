@@ -1,0 +1,14 @@
+@use './_mixin.scss' as mixin;
+
+.wrap {
+    height: 100vh;
+    background: #FFF;
+    position: relative;
+    @include mixin.wrap();
+
+    h1 {
+        text-indent: -9999px;
+        line-height: 0;
+
+    }
+}

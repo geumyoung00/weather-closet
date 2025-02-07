@@ -1,0 +1,55 @@
+@use './_var' as var;
+
+@mixin fontSize ($size: 1.6rem) {
+    font-size: $size;
+
+    @if $size =='min' {
+        font-size: 1.2rem;
+    }
+
+    @if $size =='small' {
+        font-size: 1.4rem;
+    }
+
+    @if $size =='medium' {
+        font-size: 1.8rem;
+    }
+
+    @if $size =='large' {
+        font-size: 2rem;
+    }
+}
+
+@mixin wrap($break-point : 600px) {
+    @media (min-width : $break-point) {
+        max-width: 600px;
+        height: 100vh;
+        margin: 0 auto;
+    }
+}
+
+@mixin layoutGutter($size: 500) {
+    width: 100%;
+    padding: 0 12px;
+}
+
+@mixin containerLayout($isList : false) {}
+
+@mixin button($color: var.$primary-color, $padding: 1rem 2rem) {
+    button {
+        background: $color;
+        padding: $padding;
+        border-radius: 1rem;
+    }
+
+    @if $color =='clear' {
+        button {
+            background: transparent;
+            padding: 1rem;
+        }
+    }
+}
+
+@mixin input ($type: text) {
+    input {}
+}

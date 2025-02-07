@@ -1,0 +1,18 @@
+.tab-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 66px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 0 12px;
+}
+.tab-bar .tab-button {
+  display: block;
+  height: 44px;
+  width: 44px;
+  background: #a6ff00;
+  text-indent: -9999px;
+}
