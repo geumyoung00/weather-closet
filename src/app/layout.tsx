@@ -3,6 +3,8 @@ import localFont from 'next/font/local';
 import styles from '../scss/_common.module.scss';
 import '@scss/style.scss';
 import TabBar from '@components/tabBar/TabBar';
+import { auth } from '../firebase';
+import { AuthProvider } from '../context/AuthContext';
 
 export const wanted = localFont({
   src: [
@@ -30,8 +32,10 @@ export default function RootLayout({
       <body className={`${wanted.variable}`}>
         <div className={styles.wrap}>
           <h1 className='hide'>실패없는 기온별 옷차림 가이드 - Weather closet</h1>
-          {children}
-          <TabBar />
+          <AuthProvider>
+            {children}
+            <TabBar />
+          </AuthProvider>
         </div>
       </body>
     </html>

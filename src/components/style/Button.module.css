@@ -1,23 +1,74 @@
 .btn {
-  width: fit-content;
   font-size: 1.6rem;
 }
-.btn button {
+.btn {
+  text-align: center;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.btn a {
+  display: block;
+}
+.btn a:active, .btn a:visited {
+  color: inherit;
+}
+.btn button,
+.btn a {
+  color: #FFF;
+  width: 100%;
   background: #e95332;
   padding: 1rem 2rem;
-  border-radius: 1rem;
 }
-.btn.gray button {
+.btn button:hover,
+.btn a:hover {
+  opacity: 0.9;
+}
+.btn.gray {
+  text-align: center;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.btn.gray a {
+  display: block;
+}
+.btn.gray a:active, .btn.gray a:visited {
+  color: inherit;
+}
+.btn.gray button,
+.btn.gray a {
+  color: #FFF;
+  width: 100%;
   background: gray;
   padding: 1rem 2rem;
-  border-radius: 1rem;
 }
-.btn.clear button {
+.btn.gray button:hover,
+.btn.gray a:hover {
+  opacity: 0.9;
+}
+.btn.clear {
+  text-align: center;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.btn.clear a {
+  display: block;
+}
+.btn.clear a:active, .btn.clear a:visited {
+  color: inherit;
+}
+.btn.clear button,
+.btn.clear a {
+  color: #FFF;
+  width: 100%;
   background: clear;
   padding: 1rem 2rem;
-  border-radius: 1rem;
 }
-.btn.clear button {
+.btn.clear button:hover,
+.btn.clear a:hover {
+  opacity: 0.9;
+}
+.btn.clear button,
+.btn.clear a {
   background: transparent;
   padding: 1rem;
 }

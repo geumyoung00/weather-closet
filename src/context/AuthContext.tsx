@@ -1,3 +1,5 @@
+'use client';
+
 import { createContext, useContext, useState } from 'react';
 
 //사용자 정보 타입 정의
@@ -35,11 +37,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setIsLoggedIn(false);
   };
 
-  const value = { user, isLoggedIn, login, logout };
-
   return (
     <>
-      <authContext.Provider value={value}>{children}</authContext.Provider>
+      <authContext.Provider value={{ user, isLoggedIn, login, logout }}>{children}</authContext.Provider>
     </>
   );
 }

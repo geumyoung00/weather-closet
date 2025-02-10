@@ -1,12 +1,16 @@
 import Button from '@components/button/Button';
 import Container from '@components/container/Container';
-import Text from '@components/input/Text';
+import Input from '@components/input/Input';
+import Link from 'next/link';
 
 export default function SignIn() {
   return (
     <Container>
-      <Text />
+      <Input />
       <Button>로그인</Button>
+      <Button link color='gray'>
+        <Link href={`signup`}>회원가입</Link>
+      </Button>
     </Container>
   );
 }

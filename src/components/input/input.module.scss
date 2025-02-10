@@ -1,1 +1,12 @@
 @use '../../scss/mixin' as mixin;
+
+.input {
+    margin: 1rem 0;
+    border: 1px solid #565656;
+    border-radius: .5rem;
+
+    input {
+        padding: 1rem .8rem;
+        font-size: 1.6rem;
+    }
+}
