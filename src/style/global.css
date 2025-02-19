@@ -1,0 +1,159 @@
+:root {
+  /* setting 0 */
+
+  /* color theme */
+  --background-color: #f5f5f5;
+  --primary-color: #4a90e2;
+  --text-color: #333;
+
+  /* font size */
+
+  /* spacing */
+}
+
+[data-theme="dark"] {
+  --primary-color: #222;
+  --background-color: #111;
+  --text-color: #fff;
+
+}
+
+/* 기본 박스 모델 및 초기화 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 기본 폰트 및 배경 설정 */
+html {
+  font-size: 10px;
+  line-height: 1.25;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-wanted);
+  background: var(--background-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 블록 요소 기본 설정 */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+/* 리스트 스타일 제거 */
+ol,
+ul {
+  list-style: none;
+}
+
+/* 인용문 스타일 초기화 */
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: none;
+}
+
+/* 테이블 스타일 초기화 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+/* 링크 스타일 초기화 */
+a {
+  text-decoration: none;
+  color: var(--text-color);
+  outline: none;
+}
+
+/* 버튼 및 폼 요소 스타일 초기화 */
+button,
+input,
+textarea,
+select {
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  outline: none;
+  appearance: none;
+  color: var(--text-color);
+}
+
+button {
+  cursor: pointer;
+  user-select: none;
+}
+
+textarea {
+  resize: none;
+}
+
+/* 이미지 및 미디어 요소 처리 */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* 스크롤바 스타일 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* 숨김 콘텐츠 (스크린 리더 접근 가능) */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.text-hidden {
+  text-indent: -9999px;
+  height: 0;
+  line-height: 0;
+  overflow: hidden;
+}
