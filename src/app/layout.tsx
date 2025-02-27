@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import '../style/global.css';
-import styles from '../style/basic.module.css';
 import { auth } from '../firebase';
 import { AuthProvider } from '../context/AuthContext';
+import { AllWrapper } from '@components/wrapper';
 
 export const wanted = localFont({
   src: [
@@ -29,10 +29,10 @@ export default function RootLayout({
   return (
     <html lang='ko'>
       <body className={`${wanted.variable}`}>
-        <div className={styles.wrap}>
-          <h1 className='hide'>실패없는 기온별 옷차림 가이드 - Weather closet</h1>
+        <AllWrapper $gap='36px'>
+          <h1>실패없는 기온별 옷차림 가이드 - Weather closet</h1>
           <AuthProvider>{children}</AuthProvider>
-        </div>
+        </AllWrapper>
       </body>
     </html>
   );

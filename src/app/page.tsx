@@ -1,17 +1,20 @@
+import { ListWrapper, Wrapper } from '@components/wrapper';
+import Character from './home/CharacterWrapper';
+import CurrentWrapper from './home/CurrentWrapper';
+import OutfitWrapper from './home/OutfitWrapper';
+import HourlyWrapper from './home/Hourly';
+import WeeklyWrapper from './home/Weekly';
+
 export default function Home() {
   return (
     <>
-      <div className='location'>
-        <i className='gps-icon'></i>
-        <p>현재 위치</p>
-        <h2>선택된 위치명</h2>
-        <p className='now-degree'>
-          20<i>º</i>
-        </p>
-        <p></p>
-      </div>
-      <div>Hourly List</div>
-      <div>Weekly List</div>
+      <CurrentWrapper />
+      <Character />
+      <OutfitWrapper />
+      <Wrapper $gap='8px' as='section'>
+        <HourlyWrapper />
+        <WeeklyWrapper />
+      </Wrapper>
     </>
   );
 }
