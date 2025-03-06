@@ -17,6 +17,10 @@
   --space-rg: 16px;
   --space-md: 24px;
   --space-lg: 32px;
+
+  /* media width */
+  --max-width: 500px;
+  --min-width: 320px;
 }
 
 [data-theme="dark"] {
@@ -52,8 +56,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 1.6rem;
-  max-width: 500px;
-  min-width: 320px;
+  max-width: var(--max-width);
+  min-width: var(--min-width);
   margin: 0 auto;
   overflow-x: hidden;
 }

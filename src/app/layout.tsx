@@ -4,6 +4,7 @@ import '../style/global.css';
 import { auth } from '../firebase';
 import { AuthProvider } from '../context/AuthContext';
 import { AllWrapper } from '@components/wrapper';
+import Navigation from '@components/navigation';
 
 export const wanted = localFont({
   src: [
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body className={`${wanted.variable}`}>
         <AllWrapper $gap='36px'>
           <h1>실패없는 기온별 옷차림 가이드 - Weather closet</h1>
+          <Navigation />
           <AuthProvider>{children}</AuthProvider>
         </AllWrapper>
       </body>

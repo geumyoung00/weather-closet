@@ -1,6 +1,6 @@
 import { IconWeather } from '@components/icons';
 import { Text } from '@components/text';
-import { RowWrapper, ListWrapper, HourlyItem } from '@components/wrapper';
+import { RowWrapper, ListWrapper, ListItem } from '@components/wrapper';
 
 export default function HourlyWrapper() {
   return (
@@ -9,7 +9,7 @@ export default function HourlyWrapper() {
         시간별 예보
       </Text>
       <RowWrapper as='ul' $rowAlign='flex-start'>
-        <HourlyItem $gap='4px'>
+        <ListItem $gap='4px'>
           <Text fontSize='min' $weight={700}>
             시간
           </Text>
@@ -17,7 +17,7 @@ export default function HourlyWrapper() {
           <Text fontSize='min' $weight={700}>
             기온º
           </Text>
-        </HourlyItem>
+        </ListItem>
       </RowWrapper>
     </ListWrapper>
   );

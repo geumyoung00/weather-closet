@@ -9,7 +9,7 @@ export default function WeeklyWrapper() {
         주간 예보
       </Text>
       <Wrapper as='ul' $rowAlign='flex-start'>
-        <WeeklyItem $direction='row' $gap='0'>
+        <WeeklyItem>
           <Text $weight={700}>오늘</Text>
           <IconWeather></IconWeather>
           <Wrapper>
@@ -27,7 +27,7 @@ export default function WeeklyWrapper() {
             </Text>
           </Wrapper>
         </WeeklyItem>
-        <WeeklyItem $direction='row' $gap='0'>
+        <WeeklyItem>
           <Text $weight={700}>금</Text>
           <IconWeather></IconWeather>
           <Wrapper>
@@ -45,7 +45,7 @@ export default function WeeklyWrapper() {
             </Text>
           </Wrapper>
         </WeeklyItem>
-        <WeeklyItem $direction='row' $gap='0'>
+        <WeeklyItem>
           <Text $weight={700}>금</Text>
           <IconWeather></IconWeather>
           <Wrapper>
@@ -63,7 +63,7 @@ export default function WeeklyWrapper() {
             </Text>
           </Wrapper>
         </WeeklyItem>
-        <WeeklyItem $direction='row' $gap='0'>
+        <WeeklyItem>
           <Text $weight={700}>금</Text>
           <IconWeather></IconWeather>
           <Wrapper>
@@ -81,7 +81,7 @@ export default function WeeklyWrapper() {
             </Text>
           </Wrapper>
         </WeeklyItem>
-        <WeeklyItem $direction='row' $gap='0'>
+        <WeeklyItem>
           <Text $weight={700}>금</Text>
           <IconWeather></IconWeather>
           <Wrapper>
@@ -99,7 +99,7 @@ export default function WeeklyWrapper() {
             </Text>
           </Wrapper>
         </WeeklyItem>
-        <WeeklyItem $direction='row' $gap='0'>
+        <WeeklyItem>
           <Text $weight={700}>금</Text>
           <IconWeather></IconWeather>
           <Wrapper>
@@ -117,7 +117,7 @@ export default function WeeklyWrapper() {
             </Text>
           </Wrapper>
         </WeeklyItem>
-        <WeeklyItem $direction='row' $gap='0'>
+        <WeeklyItem>
           <Text $weight={700}>금</Text>
           <IconWeather></IconWeather>
           <Wrapper>
@@ -135,7 +135,7 @@ export default function WeeklyWrapper() {
             </Text>
           </Wrapper>
         </WeeklyItem>
-        <WeeklyItem $direction='row' $gap='0'>
+        <WeeklyItem>
           <Text $weight={700}>금</Text>
           <IconWeather></IconWeather>
           <Wrapper>
@@ -153,7 +153,7 @@ export default function WeeklyWrapper() {
             </Text>
           </Wrapper>
         </WeeklyItem>
-        <WeeklyItem $direction='row' $gap='0'>
+        <WeeklyItem>
           <Text $weight={700}>금</Text>
           <IconWeather></IconWeather>
           <Wrapper>
@@ -171,7 +171,7 @@ export default function WeeklyWrapper() {
             </Text>
           </Wrapper>
         </WeeklyItem>
-        <WeeklyItem $direction='row' $gap='0'>
+        <WeeklyItem>
           <Text $weight={700}>금</Text>
           <IconWeather></IconWeather>
           <Wrapper>
