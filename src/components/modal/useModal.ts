@@ -1,20 +1,20 @@
 'use client';
 
-import { useState } from 'react';
-import { Modals } from '../../types/modal';
+import { useCallback, useState } from 'react';
+import { useModalProps } from '../../types/modal';
 
-const useModal = () => {
-  const [modals, setModals] = useState<Modals>({});
+const useModal = (initialModals: useModalProps = {}) => {
+  const [modals, setModals] = useState<useModalProps>(initialModals);
 
-  const openModal = (key: string) => {
+  const openModal = useCallback((key: string) => {
     setModals((prev) => ({ ...prev, [key]: true }));
-  };
+  }, []);
 
-  const closeModal = (key: string) => {
+  const closeModal = useCallback((key: string) => {
     setModals((prev) => ({ ...prev, [key]: false }));
-  };
+  }, []);
 
-  const isOpen = (key: string) => !!modals[key as keyof Modals];
+  const isOpen = useCallback((key: string) => Boolean(modals[key as keyof useModalProps]), [modals]);
 
   return {
     isOpen,

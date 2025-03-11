@@ -31,15 +31,12 @@ export default function Location() {
   //   if (error) alert(error);
   // }, [error]);
 
+  useEffect(() => {
+    openModal('test');
+  }, [openModal]);
+
   return (
     <>
-      {isOpen('test') && (
-        <Modal closeModal={() => closeModal('test')}>
-          <h4>TEST Modal</h4>
-        </Modal>
-      )}
-      <Button onClick={() => openModal('test')}>open test modal</Button>
-
       {/* 선택된 위치의 날씨 정보 */}
       <Wrapper as='section' $gap='8px'>
         <Title>
@@ -184,6 +181,8 @@ export default function Location() {
           </Wrapper>
         </ListWrapper>
       </Wrapper>
+
+      {isOpen('test') && <Modal closeModal={() => closeModal('test')} />}
     </>
   );
 }

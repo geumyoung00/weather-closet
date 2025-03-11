@@ -5,25 +5,45 @@ import styled, { css } from 'styled-components';
 
 interface ButtonProp {
   as?: keyof JSX.IntrinsicElements;
-  size?: 'min' | 'small' | 'regular' | 'medium' | 'large';
+  size?: 'small' | 'regular' | 'medium';
+  type?: 'confirm' | 'cancel' | 'delete' | 'disabled';
 }
 
 const sizeStyles = {
-  min: css``,
-  small: css``,
-  regular: css`
-    width: fit-content;
+  small: css`
+    width: auto;
     height: auto;
-    padding: 5px 10px;
+    padding: 6px 12px;
     font-size: var(--font-sm);
   `,
-  medium: css``,
-  large: css``,
+  regular: css`
+    width: 80px;
+    height: auto;
+    padding: 8px 0;
+  `,
+  medium: css`
+    width: 160px;
+    height: auto;
+    padding: 12px 0;
+  `,
+};
+
+const typeStyles = {
+  confirm: css`
+    background: var(--primary-color);
+    color: var(--body-color);
+  `,
+  cancel: css`
+    background-color: #e0e0e0;
+  `,
+  delete: css``,
+  disabled: css``,
 };
 
 const Button = styled.button<ButtonProp>`
-  // 기본사이즈 regular로 설정
-  ${({ size = 'regular' }) => sizeStyles[size]}
+  border-radius: var(--space-min);
+  ${({ size = 'regular' }) => sizeStyles[size]};
+  ${({ type = 'confirm' }) => typeStyles[type]}
 `;
 
 export { Button };

@@ -43,6 +43,7 @@ const Text = styled.p<TextProp>`
       ? '20px'
       : '16px'};
   font-weight: ${(prop) => prop.$weight || 500};
+  word-break: keep-all;
 
   span {
     display: inline-block;
