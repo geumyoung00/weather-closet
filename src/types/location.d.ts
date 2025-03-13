@@ -1,5 +1,4 @@
 export interface Latlng {
-  latitude: number;
-  longitude: number;
-  isLoading: boolean;
+  latitude?: number;
+  longitude?: number;
 }

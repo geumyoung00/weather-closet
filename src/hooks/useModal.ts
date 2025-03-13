@@ -1,7 +1,7 @@
 'use client';
 
 import { useCallback, useState } from 'react';
-import { useModalProps } from '../../types/modal';
+import { useModalProps } from '../types/modal';
 
 const useModal = (initialModals: useModalProps = {}) => {
   const [modals, setModals] = useState<useModalProps>(initialModals);

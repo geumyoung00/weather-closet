@@ -5,7 +5,7 @@ import styled, { css } from 'styled-components';
 
 interface ButtonProp {
   as?: keyof JSX.IntrinsicElements;
-  size?: 'small' | 'regular' | 'medium';
+  size?: 'small' | 'regular' | 'medium' | 'two' | 'three';
   type?: 'confirm' | 'cancel' | 'delete' | 'disabled';
 }
 
@@ -23,6 +23,16 @@ const sizeStyles = {
   `,
   medium: css`
     width: 160px;
+    height: auto;
+    padding: 12px 0;
+  `,
+  two: css`
+    width: 50%;
+    height: auto;
+    padding: 12px 0;
+  `,
+  three: css`
+    width: 33.33%;
     height: auto;
     padding: 12px 0;
   `,

@@ -1,49 +1,52 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useGeolocation } from './useGeolocation';
-
 import styled from 'styled-components';
+import { useRouter } from 'next/navigation';
 import { ListItem, ListWrapper, RowWrapper, WeeklyItem, Wrapper } from '@components/wrapper';
 import { Degree, Text, Title } from '@components/text';
 import { Icon, IconMin, IconOutfit, IconWeather } from '@components/icons';
-import useModal from '@components/modal/useModal';
-import { Button } from '@components/button';
-import Modal from '@components/modal/modal';
+import { Latlng } from '../../types/location';
+import { useGeolocation } from '@hooks/useGeolocation';
 
 const CharacterWrapper = styled(Wrapper)`
   height: 25vh;
   background: rgba(125, 25, 255, 0.2);
 `;
 
-/** 구현기능
- * 1. GPS 활용 동의 모달창을 통해서 사용자 위치 조회
- * 2. GPS 활용 동의시 사용자 위치 따른 날씨 정보 노출
- * 3. gps 활용 비동의시 기본설정위치에 따른 날씨 정보 노출
- */
-
-export default function Location() {
-  const { isOpen, openModal, closeModal } = useModal();
-  // const { location, error } = useGeolocation();
-  // console.log('location__?', location);
-
-  // useEffect(() => {
-  //   if (error) alert(error);
-  // }, [error]);
+export default function Location({ selectedLocation }: { selectedLocation?: Latlng }) {
+  const [location, setLocation] = useState<Latlng>();
+  const { requestCurrentLocation, currentLocation, error, isLoading } = useGeolocation();
+  const router = useRouter();
 
   useEffect(() => {
-    openModal('test');
-  }, [openModal]);
+    if (error) {
+      alert(error);
+      return;
+    }
+
+    const nowLocation = selectedLocation ?? currentLocation;
+    // null 병합 연산자 : 좌측 피연산자가 null, undefined일 경우(nullish) 우측 피연사자를 반환.
+
+    if (!nowLocation) {
+      requestCurrentLocation();
+    } else {
+      setLocation(nowLocation);
+    }
+  }, [error, currentLocation, selectedLocation]);
 
   return (
     <>
       {/* 선택된 위치의 날씨 정보 */}
+      {isLoading && <p>Please wait Loading...</p>}
       <Wrapper as='section' $gap='8px'>
         <Title>
-          <p>
-            <IconMin></IconMin>
-            GPS 수집 중
-          </p>
+          {location && (
+            <p>
+              <IconMin></IconMin>
+              GPS 수집 중
+            </p>
+          )}
           Now GPS location
         </Title>
         <Degree>
@@ -181,8 +184,6 @@ export default function Location() {
           </Wrapper>
         </ListWrapper>
       </Wrapper>
-
-      {isOpen('test') && <Modal closeModal={() => closeModal('test')} />}
     </>
   );
 }
