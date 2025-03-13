@@ -22,12 +22,13 @@ export default function Location({ selectedLocation }: { selectedLocation?: Latl
   useEffect(() => {
     if (error) {
       alert(error);
+      //기본 지역으로 설정
+      // setLocation()
       return;
     }
 
     const nowLocation = selectedLocation ?? currentLocation;
     // null 병합 연산자 : 좌측 피연산자가 null, undefined일 경우(nullish) 우측 피연사자를 반환.
-
     if (!nowLocation) {
       requestCurrentLocation();
     } else {

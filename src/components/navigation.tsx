@@ -3,6 +3,8 @@
 import styled from 'styled-components';
 import { Wrapper } from './wrapper';
 import Link from 'next/link';
+import { useParams } from 'react-router-dom';
+import { usePathname } from 'next/navigation';
 
 const NavWrapper = styled(Wrapper)`
   max-width: var(--max-width);
@@ -26,11 +28,33 @@ const NavWrapper = styled(Wrapper)`
 `;
 
 export default function Navigation() {
+  const path = usePathname();
+  const routes = {
+    '/user': { href: '/users', label: '사용자 메뉴' },
+    '/node_moduleslocations': { href: '/locations', label: '위치 설정' },
+  };
+  const currentPath = Object.entries(routes).find(([key]) => path.includes(key));
+  console.log(currentPath);
+
   return (
     <NavWrapper as='section'>
       <nav>
-        <Link href={'/users'}>사용자 메뉴</Link>
-        <Link href={'/locations'}>위치 설정</Link>
+        {currentPath ? (
+          <>
+            <Link href={currentPath[1].href}>{currentPath[1].label}</Link>
+            <Link href={'/'}>홈으로</Link>
+          </>
+        ) : (
+          <>
+            {Object.entries(routes).map(([key, { href, label }]) => {
+              return (
+                <Link key={key} href={href}>
+                  {label}
+                </Link>
+              );
+            })}
+          </>
+        )}
       </nav>
     </NavWrapper>
   );
