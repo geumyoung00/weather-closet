@@ -9,7 +9,7 @@ interface TextProp {
 
 const Title = styled.h2`
   font-size: 1.8rem;
-  font-weight: 400;
+  font-weight: 500;
 
   p {
     display: flex;

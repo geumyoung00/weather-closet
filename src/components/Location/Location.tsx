@@ -8,6 +8,7 @@ import { Degree, Text, Title } from '@components/text';
 import { Icon, IconMin, IconOutfit, IconWeather } from '@components/icons';
 import { Latlng } from '../../types/location';
 import { useGeolocation } from '@hooks/useGeolocation';
+import { useGrid } from '@hooks/useGrid';
 
 const CharacterWrapper = styled(Wrapper)`
   height: 25vh;
@@ -16,6 +17,7 @@ const CharacterWrapper = styled(Wrapper)`
 
 export default function Location({ selectedLocation }: { selectedLocation?: Latlng }) {
   const [location, setLocation] = useState<Latlng>();
+  const [locationName, setLocationName] = useState<string>();
   const { requestCurrentLocation, currentLocation, error, isLoading } = useGeolocation();
   const router = useRouter();
 
@@ -23,12 +25,14 @@ export default function Location({ selectedLocation }: { selectedLocation?: Latl
     if (error) {
       alert(error);
       //기본 지역으로 설정
-      // setLocation()
+      setLocation({ latitude: 37.413294, longitude: 127.0495556 });
+      setLocationName('서울특별시');
       return;
     }
 
     const nowLocation = selectedLocation ?? currentLocation;
     // null 병합 연산자 : 좌측 피연산자가 null, undefined일 경우(nullish) 우측 피연사자를 반환.
+
     if (!nowLocation) {
       requestCurrentLocation();
     } else {
@@ -42,13 +46,13 @@ export default function Location({ selectedLocation }: { selectedLocation?: Latl
       {isLoading && <p>Please wait Loading...</p>}
       <Wrapper as='section' $gap='8px'>
         <Title>
-          {location && (
+          {currentLocation && (
             <p>
               <IconMin></IconMin>
               GPS 수집 중
             </p>
           )}
-          Now GPS location
+          {locationName}
         </Title>
         <Degree>
           20<i>º</i>

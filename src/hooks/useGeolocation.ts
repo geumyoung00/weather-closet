@@ -1,3 +1,5 @@
+// 위치 정보 가져오기
+
 import { useEffect, useState } from 'react';
 import { Latlng } from '../types/location';
 import { stat } from 'fs';
@@ -45,7 +47,7 @@ export const useGeolocation = () => {
 
   const requestCurrentLocation = async () => {
     setIsloading(true);
-    await navigator.geolocation.getCurrentPosition(successHandler, errorHandler, {
+    navigator.geolocation.getCurrentPosition(successHandler, errorHandler, {
       enableHighAccuracy: true,
       timeout: 10000,
       maximumAge: 10000,

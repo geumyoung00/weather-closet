@@ -34,7 +34,6 @@ export default function Navigation() {
     '/node_moduleslocations': { href: '/locations', label: '위치 설정' },
   };
   const currentPath = Object.entries(routes).find(([key]) => path.includes(key));
-  console.log(currentPath);
 
   return (
     <NavWrapper as='section'>
